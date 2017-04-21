@@ -56,7 +56,7 @@ with open('query.json', 'r') as file:
 # data[0] represents all the future POST body request.
 # It has fixed values from the beginning and the end of line.
 # Although middle part may vary depending on request to tor website above.
-post_body = data[0][:127] + search_query + data[0][-262:]
+post_body = data[0][:127] + search_query + data[0][-258:]
 
 with open('query.json', 'w') as file:
     file.writelines(post_body)

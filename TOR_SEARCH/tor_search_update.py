@@ -10,6 +10,9 @@
 # to your query, as it is build assuming there's some specific static
 # expressions from the beginning and the of query.json file.
 #
+# Additionaly set correct path to query.json file 
+# at lines 62 and 67, replacing <PATH/TO/> entries.
+#
 # ----- README ENDS ----------
 
 import re
@@ -58,12 +61,12 @@ with open('query.json', 'r') as file:
 # Although middle part may vary depending on request to tor website above.
 post_body = data[0][:127] + search_query + data[0][-258:]
 
-with open('query.json', 'w') as file:
+with open('<PATH/TO/>query.json', 'w') as file:
     file.writelines(post_body)
 
 # -------------------------
 # FINALY MAKE THE UPDATE REQUEST TO ELASTICSEARCH AND SEE REPLY
-call = subprocess.Popen("curl -XPOST http://localhost:9200/.kibana/search/YOUR_SEARCH_ID/_update?pretty=true -d@query.json",
+call = subprocess.Popen("curl -XPOST http://localhost:9200/.kibana/search/YOUR_SEARCH_ID/_update?pretty=true -d@<PATH/TO/>query.json",
                         shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 (result, error) = call.communicate()
 

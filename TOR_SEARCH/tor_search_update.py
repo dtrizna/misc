@@ -4,14 +4,15 @@
 #
 # If anyone wants to use this script in their environment
 # be sure to replace YOUR_SEARCH_ID with actual search ID
-# within the curl command URL at line 69.
+# within the curl command URL at line 70.
 #
-# Also 'post_body' variable at line 62 should be tuned according 
+# Also 'post_body' variable at line 63 should be tuned according 
 # to your query, as it is build assuming there's some specific static
 # expressions from the beginning and the of query.json file.
+# See: https://github.com/dtrizna/my_ELK_scripts/blob/master/TOR_SEARCH/query.json
 #
 # Additionaly set correct path to query.json file 
-# at lines 64 and 69, replacing <PATH/TO/> entries.
+# at lines 65 and 70, replacing <PATH/TO/> entries.
 #
 # ----- README ENDS ----------
 

@@ -4,14 +4,14 @@
 #
 # If anyone wants to use this script in their environment
 # be sure to replace YOUR_SEARCH_ID with actual search ID
-# within the curl command URL at line 61.
+# within the curl command URL at line 69.
 #
-# Also 'post_body' variable at line 58 should be tuned according 
+# Also 'post_body' variable at line 62 should be tuned according 
 # to your query, as it is build assuming there's some specific static
 # expressions from the beginning and the of query.json file.
 #
 # Additionaly set correct path to query.json file 
-# at lines 62 and 67, replacing <PATH/TO/> entries.
+# at lines 64 and 69, replacing <PATH/TO/> entries.
 #
 # ----- README ENDS ----------
 

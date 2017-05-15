@@ -21,11 +21,37 @@ time.sleep(delay)
 
 stats2 = subprocess.check_output(["netstat", "-su"]).split()
 
-PKT_ST = int(stats1[8])
-ERR_ST = int(stats1[17])
+# PARSING netstat -su output;
+# It changes from time to time, so I need to search for pattern in output
+# and take a specific field on that line
 
-PKT_END = int(stats2[8])
-ERR_END = int(stats2[17])
+# packet stats -------------
+try:
+        PKT_ST = int([ s for s in stats1 if 'packets received' in s ][0].split()[0])
+except:
+        print('Error in "netstat -su" handling.')
+
+
+try:
+        PKT_END = int([ s for s in stats2 if 'packets received' in s ][0].split()[0])
+except:
+        print('Error in "netstat -su" handling.')
+
+
+# error stats ---------------
+
+try:
+        ERR_ST = int([ s for s in stats1 if 'packet receive errors' in s ][0].split()[0])
+except:
+        print('Error in "netstat -su" handling.')
+
+
+try:
+        ERR_END = int([ s for s in stats2 if 'packet receive errors' in s ][0].split()[0])
+except:
+        print('Error in "netstat -su" handling.')
+
+# ---------------------------
 
 PKTS = PKT_END - PKT_ST
 ERRS = ERR_END - ERR_ST

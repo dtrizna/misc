@@ -67,7 +67,7 @@ with open('<PATH/TO/>query.json', 'w') as file:
 
 # -------------------------
 # FINALY MAKE THE UPDATE REQUEST TO ELASTICSEARCH AND SEE REPLY
-call = subprocess.Popen("curl -s -XPOST http://localhost:9200/.kibana/search/977e80c0-201d-11e7-bdeb-63e711161594/_update?pretty=true -d@/root/scripts/TOR_SEARCH_SCRIPT_DIR/query.json",
+call = subprocess.Popen("curl -s -XPOST http://localhost:9200/.kibana/search/<SEARCH_ID>/_update?pretty=true -d@<PATH/TO/>/query.json",
                         shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 (result, error) = call.communicate()
 

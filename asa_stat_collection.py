@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from netmiko import cisco
 from collections import deque
 import re

